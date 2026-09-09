@@ -20,7 +20,7 @@ jobs:
           node-version: 22
           cache: npm
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Run unit tests
         run: npm run test:unit
 
@@ -36,7 +36,7 @@ jobs:
           node-version: 22
           cache: npm
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Build application
         env:
           VITE_GOOGLE_API_KEY: ${{ secrets.VITE_GOOGLE_API_KEY }}
@@ -61,7 +61,7 @@ jobs:
           node-version: 22
           cache: npm
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Install Playwright Chromium
         run: npm run test:e2e:install
       - name: Run intercepted browser tests

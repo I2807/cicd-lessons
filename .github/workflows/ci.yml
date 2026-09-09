@@ -81,4 +81,8 @@ jobs:
     name: Deploy verified Pages artifact
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: [unit, build, e2e]
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     uses: ./.github/workflows/deploy.yml
